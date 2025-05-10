@@ -1,5 +1,7 @@
 package org.truth.course;
 
+import org.truth.subject.Subject;
+
 class ClassroomCourse extends Course  {
 
     private  String school;

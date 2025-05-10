@@ -1,5 +1,7 @@
 package org.truth.course;
 
+import org.truth.subject.Subject;
+
 public abstract class Course {
     private String instructor;
     private int course_fee;

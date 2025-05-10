@@ -1,5 +1,7 @@
 package org.truth.course;
 
+import org.truth.subject.Subject;
+
 public class OnlineCourse extends Course{
     private String videoLessons;
     private int weeks;
