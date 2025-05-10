@@ -7,7 +7,7 @@ public class Subject {
     private double credits;
 
 
-    Subject(String title, double credits) {
+    public Subject(String title, double credits) {
 
         this.title= title;
         this.credits =credits;
