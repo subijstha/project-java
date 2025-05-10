@@ -2,7 +2,7 @@ package org.truth.course;
 
 import org.truth.subject.Subject;
 
-class ClassroomCourse extends Course  {
+public class ClassroomCourse extends Course  {
 
     private  String school;
     private String session;
