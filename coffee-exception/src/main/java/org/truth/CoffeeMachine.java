@@ -95,7 +95,7 @@ public class CoffeeMachine {
                     }
 
                     Latte myLatte = null;
-                    // TODO 13: surround the myLatte object with a try-catch block to handle the IllegalArgumentException.
+                    // surround the myLatte object with a try-catch block to handle the IllegalArgumentException.
                     try{
 
                         myLatte = new Latte(latteName, latteRoast, lattePrice, milkType, syrupFlavor);
