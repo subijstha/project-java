@@ -15,7 +15,7 @@ public abstract class Ride {
     public abstract double fare();
 
     public void show() {
-        System.out.printf("%s: %s → %s, %.1f mi, $%.2f%n", id, from, to, miles, fare());
+        System.out.printf("%s: %s -> %s, %.1f mi, $%.2f%n", id, from, to, miles, fare());
     }
 
 }

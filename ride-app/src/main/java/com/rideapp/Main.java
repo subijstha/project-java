@@ -10,8 +10,8 @@ public class Main {
         driver.assign(p);
 
         Rider rider = new Rider("Bob");
-        rider.book(s);
-        rider.book(p);
+        rider.bookRide(s);
+        rider.bookRide(p);
 
         driver.show();
         System.out.println();
