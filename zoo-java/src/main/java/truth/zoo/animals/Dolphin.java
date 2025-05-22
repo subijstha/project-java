@@ -54,3 +54,4 @@ public class Dolphin extends Animal implements Swim, Serializable {
                 ", swimmingSpeed=" + swimmingSpeed +
                 '}';
     }
+}

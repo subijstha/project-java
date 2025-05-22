@@ -1,4 +1,4 @@
-package truth.zoo.interface;
+package truth.zoo.interfaces;
 
 public interface Eat {
     public void eatingFood();
