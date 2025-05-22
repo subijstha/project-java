@@ -30,4 +30,29 @@ public class DirectoryManager {
             }
         }
     }
+
+    // define a static void method called createDirectory with a single
+    // parameter directoryPath of type String
+    public static void createDirectory(String directoryPath) {
+
+        // create a new File object for the directoryPath
+        File directory = new File(directoryPath);
+
+        // check if the directory exists using the exists() method from the File class
+
+        if (!directory.exists()) {
+            // If the directory does not exist, create the directory using the mkdirs()
+            // method from the File class
+            if (!directory.mkdir()) {
+                System.out.println("failed  to create a directory");
+                return;
+            }
+            System.out.println("Directory created successfully");
+            // Print a message indicating that the directory was created
+
+        } else {
+            System.out.println("Directory already exists");
+
+        }
+    }
 }
