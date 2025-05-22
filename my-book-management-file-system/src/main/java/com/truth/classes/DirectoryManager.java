@@ -138,4 +138,22 @@ public class DirectoryManager {
         }
     }
 
+
+    public static void deleteFile(String fileName) {
+        //  create a File object using the provided fileName
+        File file = new File(fileName);
+
+        // Attempt to delete the file using the delete() method from the File
+        // class
+        if (file.delete()) {
+            // If the file is deleted successfully, print a message indicating the same
+            System.out.println("file deleted successfully " + fileName);
+
+        } else {
+            // If the file deletion fails, print an error message
+            System.out.println("failed to delete file : " + fileName);
+
+        }
+    }
+
 }
