@@ -1,10 +1,13 @@
 package com.truth.classes;
 
+import java.io.File;
+
 public class Main {
     public static void main(String[] args) {
         // creating book files in myBooks directory
+        String basePath = new File("my-book-management-file-system/src/main/java/com/truth").getAbsolutePath();
+        String directoryPath = basePath + File.separator + "myBooks";
 
-        String directoryPath = "./myBooks";
         String[] titles = { "The Great Gatsby", "1984", "To Kill a Mockingbird" };
         String[] authors = { "F. Scott Fitzgerald", "George Orwell", "Harper Lee" };
 
@@ -43,11 +46,11 @@ public class Main {
 
         // Task 6 testing
 
-        // Book book = new Book("1984", "George Orwell", "978-0451524935");
-        // String filePath = "./myBooks/book.ser";
-        // Book.serializeBook(book, filePath);
-        // Book deserializedBook = Book.deserializeBook(filePath);
-        // System.out.println("Deserialized Book: " + deserializedBook);
+        Book book = new Book("1984", "George Orwell", "978-0451524935");
+        String filePath = "my-book-management-file-system/src/main/java/com/truth/myBooks/book.ser";
+        Book.serializeBook(book, filePath);
+        Book deserializedBook = Book.deserializeBook(filePath);
+        System.out.println("Deserialized Book: " + deserializedBook);
 
     }
 }

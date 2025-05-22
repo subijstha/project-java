@@ -45,13 +45,13 @@ public class Book implements Serializable {
         try (FileOutputStream fileOut = new FileOutputStream(filePath);
                 ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
 
-            // TODO 6d: use the writeObject() method from the ObjectOutputStream class to
+            //  use the writeObject() method from the ObjectOutputStream class to
             // write the book object to the file
             out.writeObject(book);
-            // TODO 6e: print a message indicating that the book data was serialized
+            //  print a message indicating that the book data was serialized
             System.out.println("boook serialized successfully to :  " + filePath);
         } catch (IOException e) {
-            // TODO 6f: catch the IOException and print the stack trace
+            //  catch the IOException and print the stack trace
             e.printStackTrace();
         }
     }
