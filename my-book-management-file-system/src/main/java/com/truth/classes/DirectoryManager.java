@@ -1,6 +1,11 @@
 package com.truth.classes;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class DirectoryManager {
 
@@ -83,6 +88,54 @@ public class DirectoryManager {
 
         }
 
+    }
+
+    // Define a static void method called copyFiles with two parameters sourceDir
+    // and destDir of type String
+    public static void copyFiles(String sourceDir, String destDir) {
+        // create Path objects for the sourceDir and destDir using the Paths.get()
+        // method
+        Path sourcePath = Paths.get(sourceDir);
+        Path destinationPath = Paths.get(destDir);
+
+        // Write a try-catch block to handle IOException because creating a new
+        // directory and copying files can throw an IOException
+        try {
+            // Check if the destination directory exists using the exists() method from the
+            // Files class
+            if (!Files.exists(destinationPath)) {
+               
+                // If the destination directory does not exist, create the directory using the
+                // createDirectories() method from the Files class
+                Files.createDirectories(destinationPath);
+            }
+
+            // Iterate through the files in the source directory using a loop
+            File sourceDirectory = new File(sourceDir);
+           
+            File[] files = sourceDirectory.listFiles();
+          
+            // For each file, create a Path object using the file's name and the destDir
+            if (files != null) {
+                for (File file : files) {
+                    if (file.isFile()) {
+                        Path destFilePath = destinationPath.resolve(file.getName());
+
+                        // Use the copy() method from the Files class to copy the file to the
+                        // destination directory
+                        Files.copy(file.toPath(), destFilePath, StandardCopyOption.REPLACE_EXISTING);
+                        // Print a message indicating that the file was copied
+                        System.out.println("Copied: " + file.getName());
+                    } else {
+                        System.out.println("Source directory is empty or does not exists");
+
+                    }
+                }
+
+            }
+        } catch (IOException e) {
+            System.out.println("Errror copying files : " + e.getMessage());
+        }
     }
 
 }
