@@ -55,4 +55,34 @@ public class DirectoryManager {
 
         }
     }
+
+    // : Define a static void method called renameDirectory with two
+    // parameters: currentDirectory and newDirectory of type String
+    public static void renameDirectory(String currentDirectory, String newDirectory) {
+        // create two File objects for the currentDirectory and newDirectory
+
+        File oldDir = new File(currentDirectory);
+        File newDir = new File(newDirectory);
+
+        // Check if the new directory already exists using the exists() method
+        // from the File class
+        if (newDir.exists()) {
+            System.out.println("The new Directory already exists");
+        } else {
+            // Use the renameTo() method from the File class to rename the old
+            // directory to the new directory
+            if (!oldDir.renameTo(newDir)) {
+                // If the rename fails, print an error message
+                System.out.println("Failed to rename Directory");
+
+            } else {
+                // If the rename is successful, print a success message
+                System.out.println("Directory has been renamed successfully.");
+                ;
+            }
+
+        }
+
+    }
+
 }
